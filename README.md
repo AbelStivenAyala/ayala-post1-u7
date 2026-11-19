@@ -110,7 +110,7 @@ Limitación conocida: pagarConPasarela realiza la llamada HTTP dentro de una tra
 
 Capturas de los endpoints probados
 
-Las capturas están en la carpeta docs/.
+Las capturas están en la carpeta capturas/.
 
 Parte 1
 Prueba	Captura
@@ -128,6 +128,7 @@ Pago rechazado (402)	402
 Ya pagada, en línea (409)	409 en línea
 Cambio a Wompi (200)	wompi
 Wompi rechazado (402)	wompi 402
+
 Conclusiones
 
 En la Parte 1 aprendí a decidir dónde vive cada regla de negocio: lo que solo depende de los datos del propio objeto va en la entidad, y lo que necesita datos externos se orquesta en el Service, delegando a la base de datos el trabajo que ella hace mejor. En la Parte 2, lo que más me costó fue decidir entre extender las capas o introducir el puerto, porque la Opción B también resolvía la intercambiabilidad con menos código. Me incliné por el puerto porque cada pasarela tiene un contrato HTTP distinto y porque el número de proveedores podía cambiar. Entendí que una arquitectura más elaborada se justifica por un requisito concreto de cambio, no por el patrón en sí.
